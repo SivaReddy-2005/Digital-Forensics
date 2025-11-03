@@ -1,61 +1,83 @@
-
-# Experment - 1:- Forensic Imaging of a Storage Device Using FTK Imager
+# Experiment 1: Evidence Acquisition Using FTK Imager
 
 ## Aim
-To create a forensic image of a storage device using FTK Imager to preserve the original data in a forensically sound manner for further analysis.
+To capture RAM data and create a forensic disk image using FTK Imager.
+
+## Requirements
+- FTK Imager
+- Windows Operating System
 
 ## Description
-Forensic imaging is the process of creating an exact, bit-by-bit copy of the data from a storage device, ensuring that the original evidence remains unaltered. FTK Imager is a widely-used forensic tool that allows for capturing forensic images of hard drives, USB drives, and other digital storage media. The forensic image can be analyzed without affecting the original media, maintaining the integrity and admissibility of the evidence.
+- FTK Imager creates bit-by-bit forensic images of hard drives, partitions, and other storage media, preserving the original data, including file slack and unallocated space, without altering it.
+- It allows investigators to preview files, folders, and forensic images on various media types, supporting analysis tasks like keyword searching, metadata extraction, and file type identification.
+- The tool generates MD5 and SHA1 hash values to verify the integrity of forensic images, ensuring they remain unchanged and admissible in court.
 
-## Tools and Equipment Used
-- **FTK Imager**: Forensic imaging software to create bit-by-bit copies.
-- **Storage Device**: The device to be imaged (e.g., hard disk, USB flash drive).
-- **Write Blocker**: A hardware or software device to prevent any write operations on the 
-original storage device during imaging.
+## Acquiring Volatile Memory (RAM) Using FTK Imager
 
-- **Forensic Workstation**: A computer with FTK Imager installed and sufficient storage for the forensic image.
- **External Storage Media**: Destination device for saving the forensic image (e.g., external hard drive).
+### Step-1
+Right-click on FTK Imager and run as Administrator.
 
+![(images/step1.png)](https://github.com/SivaReddy-2005/Digital-Forensics/blob/main/images/Ex-1%20im1.png)
 
+### Step-2
+On the top-right menu bar, click **File** and select **Capture Memory** from the drop-down list.
 
+![(images/step2.png)](https://github.com/SivaReddy-2005/Digital-Forensics/blob/main/images/Ex-1%20Im2.png)
 
+### Step-3
+A box will appear. Select the destination path for your file and provide the file name with a `.mem` extension. Pagefile and AD1 file options are optional.
 
+![(images/step3.png)](https://github.com/SivaReddy-2005/Digital-Forensics/blob/main/images/Ex-1%20Im3.png)
 
+### Step-4
+A green progress bar will indicate the capture status. The time taken to capture the RAM depends on the RAM size. After completion, the memory dump file will be available in the destination folder.
 
+![(images/step4.png)](https://github.com/SivaReddy-2005/Digital-Forensics/blob/main/images/Ex-1%20Im4.png)
 
+After installation the report will be appeared in file explorer like .mem
 
-## Procedure
-1. **Prepare the Workstation**: Ensure FTK Imager is installed on the forensic workstation, and necessary permissions are granted.
-![alt text](<Screen Shorts/Screenshot 2025-09-01 222934.png>)
+![(images/step5.png)](https://github.com/SivaReddy-2005/Digital-Forensics/blob/main/images/Ex-1%20Im5.png)
 
-2. **Connect Write Blocker and Storage Device**: Attach the write blocker between the storage device and the workstation to prevent writing to the original media.
-![alt text](<Screen Shorts/Screenshot 2025-09-01 222958-1.png>)
+## Acquiring Non-Volatile Memory (Disk Image) Using FTK Imager
 
-3. **Launch FTK Imager**: Open the FTK Imager software on the forensic workstation.
-![alt text](<Screen Shorts/Screenshot 2025-09-01 222958.png>)
-4. **Select 'Create Disk Image'**: From the FTK Imager menu, choose "Create Disk Image" to start the imaging process.
-![alt text](<Screen Shorts/Screenshot 2025-09-01 223014.png>)
--
-5. **Choose Image Source**: Select the physical storage device to be imaged from the list of connected devices.
-[alt text](<Screen Shorts/Screenshot 2025-09-01 223014-1.png>)
-6. **Select Image Type and Destination**:
-   - Choose the image format (e.g., E01, RAW, AFF).
-   - Specify the destination path on the external storage where the image will be saved.
-   ![alt text](<Screen Shorts/Screenshot 2025-09-01 223133.png>)
-7. **Add Image Details and Hashes**:
-   - Enter case information or notes if necessary.
-   - Select options to calculate hash values (MD5, SHA1) for integrity verification.'
-   ![alt text](<Screen Shorts/Screenshot 2025-09-01 223148.png>)
-8. **Start Imaging**: Begin the imaging process and monitor its progress.
-![alt text](<Screen Shorts/Screenshot 2025-09-01 223211-1.png>)
-9. **Verify Image Integrity**: Once the imaging is complete, verify the hash values to ensure the forensic image is an exact copy.
-![alt text](<Screen Shorts/Screenshot 2025-09-01 223226-1.png>)
-10. **Document the Process**: Record details such as date, time, operator, device specifics, and any observations.
-![alt text](<Screen Shorts/Screenshot 2025-09-01 223242.png>)
-![alt text](<Screen Shorts/Screenshot 2025-09-01 223359.png>)
-![alt text](<Screen Shorts/Screenshot 2025-09-01 223501.png>)
-![alt text](<Screen Shorts/Screenshot 2025-09-01 224145-1.png>)
+### Step-1
+On the top-right menu bar, click **File** and select **Create Disk Image** from the drop-down menu.
 
-## Result
-A forensic image file of the storage device is successfully created and saved to the specified destination. The image includes verified hash values to ensure data integrity. This forensic image can now be used for detailed analysis without compromising the original evidence.
+![(images/step1.png)](https://github.com/SivaReddy-2005/Digital-Forensics/blob/main/images/Ex-1%20im6.png)
 
+### Step-2
+In the dialog box, choose the source evidence type (e.g., Physical Drive, Logical Drive, Image File, or Contents of a Folder)
+
+![(images/step1.png)](https://github.com/SivaReddy-2005/Digital-Forensics/blob/main/images/Ex-1%20im7.png)
+
+### Step-3
+Select the drive you want to image and click **Finish**.
+
+![(images/step1.png)](https://github.com/SivaReddy-2005/Digital-Forensics/blob/main/images/Ex-1%20im8.png)
+
+### Step-4
+In the "Create Image" dialog, click **Add** to define the image type.
+
+![(images/step1.png)](https://github.com/SivaReddy-2005/Digital-Forensics/blob/main/images/Ex-1%20im9.png)
+
+### Step-5
+Select the image type from the dialog box (Raw, SMART, E01, AFF). E01 is recommended.
+
+![(images/step1.png)](https://github.com/SivaReddy-2005/Digital-Forensics/blob/main/images/Ex-1%20im10.png)
+
+### Step-6
+Fill in the case information and click **Next**.
+
+![(images/step1.png)](https://github.com/SivaReddy-2005/Digital-Forensics/blob/main/images/Ex-1%20im11.png)
+
+### Step-7
+Choose the destination folder and provide a file name for the image.
+
+![(images/step1.png)](https://github.com/SivaReddy-2005/Digital-Forensics/blob/main/images/Ex-1%20im12.png)
+
+### Step-8
+Set options like compression and splitting size, then click **Finish** to start the imaging process.
+
+![(images/step1.png)](https://github.com/SivaReddy-2005/Digital-Forensics/blob/main/images/Ex-1%20im13.png)
+
+FTK Imager will display progress along with hash values. The imaging process may take time depending on the drive size. After completion, FTK Imager verifies the hash values automatically to maintain forensic integrity. Finally, the hash values are matched.
